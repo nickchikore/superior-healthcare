@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div *ngIf="mobileView; then mobile else desktop"></div>
+<ng-template #mobile>
+  <div class="training full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly center">
+      <div fxLayout="column" class="padding md">
+      <h2 class="hero">Training and development</h2>
+      </div>
+  </div>
+  <div class="top-padding mustard bottom-padding" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column" class="padding sm">
+      <p class="hero">Superior HealthCare strives to create a working environment supported by a highly trained agency staff. We ensure that agency staff working for Superior Healthcare have the skills and training required to provide high standard of care to our clients. </p>
+      <p>We ensure that staff employed by Superior Health care have completed the statutory and mandatory training such as:</p>
+      <ul>
+          <li fxLayout="row"><i class="icon yes"></i>Lone working</li>
+          <li fxLayout="row"><i class="icon yes"></i>RIDDOR</li>
+          <li fxLayout="row"><i class="icon yes"></i>COSHH</li>
+          <li fxLayout="row"><i class="icon yes"></i>Food Safety & Hygiene level 2</li>
+          <li fxLayout="row"><i class="icon yes"></i>Mental Capacity  Act 2005 and Deprivation of Liberty Safeguard  (Dols)</li>
+          <li fxLayout="row"><i class="icon yes"></i>Basic Life Support</li>
+          <li fxLayout="row"><i class="icon yes"></i>Moving and handling</li>
+          <li fxLayout="row"><i class="icon yes"></i>Infection Control</li>
+          <li fxLayout="row"><i class="icon yes"></i>Information Governance</li>
+      </ul> 
+    </div>
+  </div>
+</ng-template>
+<ng-template #desktop>
+    <div class="training full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly center">
+        <div fxLayout="column" class="padding md banner">
+        <h2 class="hero">Training and development</h2>
+        </div>
+    </div>
+    <div class="top-padding mustard bottom-padding" fxLayout="column" fxLayoutAlign="space-evenly center">
+      <div fxLayout="column" class="padding md">
+        <p class="hero">Superior HealthCare strives to create a working environment supported by a highly trained agency staff. We ensure that agency staff working for Superior Healthcare have the skills and training required to provide high standard of care to our clients. </p>
+        <p>We ensure that staff employed by Superior Health care have completed the statutory and mandatory training such as:</p>
+        <ul>
+            <li fxLayout="row"><i class="icon yes"></i>Lone working</li>
+            <li fxLayout="row"><i class="icon yes"></i>RIDDOR</li>
+            <li fxLayout="row"><i class="icon yes"></i>COSHH</li>
+            <li fxLayout="row"><i class="icon yes"></i>Food Safety & Hygiene level 2</li>
+            <li fxLayout="row"><i class="icon yes"></i>Mental Capacity  Act 2005 and Deprivation of Liberty Safeguard  (Dols)</li>
+            <li fxLayout="row"><i class="icon yes"></i>Basic Life Support</li>
+            <li fxLayout="row"><i class="icon yes"></i>Moving and handling</li>
+            <li fxLayout="row"><i class="icon yes"></i>Infection Control</li>
+            <li fxLayout="row"><i class="icon yes"></i>Information Governance</li>
+        </ul> 
+      </div>
+    </div>
+  </ng-template>
+<app-footer></app-footer>

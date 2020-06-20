@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div *ngIf="mobileView; then mobile else desktop"></div>
+<ng-template #mobile>
+<div *ngIf="mobileView" class="services full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column" class="padding md">
+    <h2 class="hero">Our services</h2>
+    </div>
+</div>
+<div class=" padding sm top-padding mustard bottom-padding" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+    <div fxLayout="column" class="">
+        <h2 class="hidden">Our services</h2>
+        <div fxLayout="column" fxLayoutGap="30px">
+            <div class="service nursing">
+                <h3>Nurses <i class="icon info"></i></h3>
+            </div>
+            <div class="service carers">
+                <h3>Adult carers <i class="icon info"></i></h3>
+            </div>
+            <div class="service support-workers">
+                <h3>Support workers <i class="icon info"></i></h3>
+            </div>
+        </div>
+        <p class="hero"> Superior Healthcare offers a range of services tailored to meet your needs. Some of our services include:</p>
+        <div fxLayout="row">
+            <ul fxFlex="100%">
+            <li fxLayout="row"><i class="icon yes"></i>Home to home visits</li>
+            <li fxLayout="row"><i class="icon yes"></i>Support for individuals with disabilities </li>
+            <li fxLayout="row"><i class="icon yes"></i>Respite care </li>
+            <li fxLayout="row"><i class="icon yes"></i>Caring for the elderly</li>
+            <li fxLayout="row"><i class="icon yes"></i>Support for people with mental health needs</li>
+            <li fxLayout="row"><i class="icon yes"></i>Domestic tasks</li>
+            <li fxLayout="row"><i class="icon yes"></i>Continence management</li>
+            <li fxLayout="row"><i class="icon yes"></i>Companionship & Trips out</li>
+            <li fxLayout="row"><i class="icon yes"></i>Medication support</li>
+            <li fxLayout="row"><i class="icon yes"></i>Residential care service </li>
+            <li fxLayout="row"><i class="icon yes"></i>Complex care </li>
+        </ul> 
+      </div>
+  </div>
+</div>
+</ng-template>
+<ng-template #desktop>
+<div class="services full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column" class="padding md banner">
+    <h2 class="hero">Our services</h2>
+    </div>
+</div>
+<div class="top-padding mustard bottom-padding lg" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+    <div fxLayout="column" class="padding md">
+        <h2 class="hidden">Our services</h2>
+        <div fxLayout="row" fxLayoutGap="30px">
+            <div fxFlex="30%" class="service nursing">
+                <!-- <img src="../../assets/images/nurse.jpeg" alt="Nursing"> -->
+                <h3>Nurses <i class="icon info"></i></h3>
+            </div>
+            <div fxFlex="30%" class="service carers">
+                <!-- <img src="../../assets/images/adult-nurse.jpg" alt="Carers"> -->
+                <h3>Adult carers <i class="icon info"></i></h3>
+            </div>
+            <div fxFlex="30%" class="service support-workers">
+                <!-- <img src="../../assets/images/supporting-children.jpg" alt="Support workers"> -->
+                <h3>Support workers <i class="icon info"></i></h3>
+            </div>
+        </div>
+        <p class="hero"> Superior Healthcare offers a range of services tailored to meet your needs. Some of our services includes:</p>
+        <div fxLayout="row">
+            <div fxFlex="30%"></div>
+            <ul fxFlex="70%">
+            <li fxLayout="row"><i class="icon yes"></i>Home to home visits</li>
+            <li fxLayout="row"><i class="icon yes"></i>Supporting individuals with disabilities </li>
+            <li fxLayout="row"><i class="icon yes"></i>Respite care </li>
+            <li fxLayout="row"><i class="icon yes"></i>Caring for elderly</li>
+            <li fxLayout="row"><i class="icon yes"></i>Supporting people with mental health needs</li>
+            <li fxLayout="row"><i class="icon yes"></i>Domestic tasks</li>
+            <li fxLayout="row"><i class="icon yes"></i>Continence management</li>
+            <li fxLayout="row"><i class="icon yes"></i>Companionship & Trips out</li>
+            <li fxLayout="row"><i class="icon yes"></i>Medication support</li>
+            <li fxLayout="row"><i class="icon yes"></i>Residential care service </li>
+            <li fxLayout="row"><i class="icon yes"></i>Complex care </li>
+        </ul> 
+      </div>
+  </div>
+</div>
+</ng-template>
+<app-footer></app-footer>

@@ -1,0 +1,14 @@
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1001;  
+    &.fixed {
+      // Styles for a fixed header
+    }
+  }
+  
+  main {
+      //padding-top: 82px; // Your header height + some slack
+  }

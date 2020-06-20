@@ -1,0 +1,100 @@
+<app-header></app-header>
+<div *ngIf="mobileView; then mobile else desktop"></div>
+<ng-template #mobile>    
+  <div class="full-page home dark" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+    <div fxLayout="column" class="padding md">
+      <h2 class="hero center">Experience to Superior healthcare.</h2>
+    </div>
+  </div>
+  
+    <div class="full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+        <div fxLayout="column" class="padding md hero center">
+        <h2 class="hidden">Home page</h2>
+        <p class="display hidden">Dependable Care, Your Way!</p>
+        <!-- <p>Superior Healthcare aims to provide Ad-hoc, short or long term Contracts solution and offer a unique service that is driven by excellence. Our service are available 7 days per week, 52 weeks per year. We provide dependable care, your way.</p> -->
+        <p>We provide dedicated, caring and experienced staff to suit your needs </p>
+      </div>
+    </div>
+  
+      <div class="full-page about-us light mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+        <span id="about-us"></span>
+        <div class="" fxLayout="row" >
+      <div fxLayout="column" class=" padding sm">
+        <h2 class="thin-rule hero">Who we are</h2>
+        <div fxLayout="row" class="display">
+          <p>Superior Healthcare, is a specialist recruitment business providing expertise and staffing solutions to a diverse range of employers across the healthcare sector. We are dedicated to supplying the highest quality healthcare workers to our clients. Our staff are highly knowledgeable, professional consisting of a clinical team of registered nurses, health care assistants and support workers. We are available 24/7 healthcare to offer expert staff for dependable Care. Our agency workers are at the centre of what we do every day. Our compliance and registration procedures are effective for our candidates. Superior Healthcare is a choice of Dependable Care, Your Way. </p>
+        </div>
+      </div>
+      <div class="about-video"></div>
+    </div>
+      </div>
+    <div class="full-page employees light-grey-bg dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+      <span id="employees"></span>
+      <div class="" fxLayout="row">
+        <div fxLayout="column" class=" padding md">
+          <h2 class="thin-rule hero">Employees</h2>
+          <div class="display">
+            <p>Are you looking for a rewarding position that meets your expectations? Our dedicated team have the experience, knowledge and skills to find you the most suitable placement with the best rates of pay. </p> 
+          </div>
+          <!-- <img src="../assets/images/team.jpeg" alt="Our employees"> -->
+          <button routerLink="./employees" class="primary">Join our team!</button>
+        </div>
+        <div class="lead-image" fxFlex="10%"></div>
+      </div>
+    </div>
+
+
+</ng-template>
+<ng-template #desktop>
+  <carousel class="fullwidth" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+    <ng-container *ngFor="let item of items;">
+      <ng-container *carouselItem>
+        <div class="hero item {{item.title}}" fxLayout="row" fxLayoutAlign="center center">
+          <h2 class="hidden">{{item.title}}</h2>
+          <p fxFlex="70%" class="center">{{item.description}}</p>
+        </div>
+      </ng-container>
+    </ng-container>
+  </carousel>
+  
+
+
+  <div class="full-page dark-blue dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+      <div fxLayout="column" class="padding md hero center">
+      <h2 class="hidden">Home page</h2>
+      <p class="display hidden">Dependable Care, Your Way!</p>
+      <p>Superior Healthcare aims to provide Ad-hoc, short or long term Contracts solution and offer a unique service that is driven by excellence. Our service are available 7 days per week, 52 weeks per year. We provide dependable care, your way.</p>
+    </div>
+  </div>
+
+    <div class="full-page about-us light mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+      <span id="about-us"></span>
+      <div class="" fxLayout="row" >
+    <div fxLayout="column" class=" padding lg">
+      <h2 class="thin-rule hero">Who we are</h2>
+      <div fxLayout="row" class="display">
+        <p fxFlex="70%">
+            Superior Healthcare, is a specialist recruitment business providing expertise and staffing solutions to a diverse range of employers across the healthcare sector. We are dedicated to supplying the highest quality healthcare workers to our clients. Our staff are highly knowledgeable, professional consisting of a clinical team of registered nurses, health care assistants and support workers. We are available 24/7 healthcare to offer expert staff for dependable Care. Our agency workers are at the centre of what we do every day. Our compliance and registration procedures are effective for our candidates. Superior Healthcare is a choice of Dependable Care, Your Way.
+        </p>
+      </div>
+    </div>
+    <div class="about-video"></div>
+  </div>
+    </div>
+  <div class="full-page employees light-grey-bg dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+      <span id="employees"></span>
+    <div class="" fxLayout="row">
+      <div class="lead-image" fxFlex="30%">
+      </div>
+      <div fxLayout="column" class=" padding lg">
+        <h2 class="thin-rule hero">Employees</h2>
+        <div class="display">
+          <p>Are you looking for a rewarding position that meets your expectations? Our dedicated team have the experience, knowledge and skills to find you the most suitable placement with the best rates of pay. </p> 
+        </div>
+        <!-- <img src="../assets/images/team.jpeg" alt="Our employees"> -->
+        <div><a routerLink="../employees" class="primary btn">Join our team!</a></div>
+      </div>
+    </div>
+  </div>    
+</ng-template> 
+ <app-footer></app-footer>

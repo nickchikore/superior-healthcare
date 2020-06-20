@@ -1,0 +1,19 @@
+ul{
+    padding:0 0 0 6em;
+    li{
+        padding: 6px 0;
+    }
+
+    @media screen and (max-width:768px)  {
+        padding:0 0 0 0em;
+    }
+}
+.icon{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    &.yes{
+        background: url(../../assets/images/icons/Check.png) no-repeat;
+        background-size: contain;
+    }
+}

@@ -1,1 +1,815 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:400,500&display=swap');
+// @import "./assets/materialize/css/materialize.min.css";
+$mustard:#FBC404c5;
+$coffee:#130E04;
+$brown:#7C540C;
+$orange:#FBAB13;
+$jade:#31B25D;
+$sacremento:#0C402D;
+$forest:#05591Bc0;
+$seaweed:#19703F;
+$dark-blue:#06161F;
+$navy-blue:#040E54;
+$blue:#04146C;
+$white:#FFFFFF;
+$offwhite: #f0f0f0;
+$grey:#333333;
+$light-grey:#7c7c7b;
+$copy-font-size: 16px;
+$header-font-size:24px;
+$font-color:$coffee;
+
+$primary-font: 'Playfair Display', serif;
+$secondary-font: 'Roboto', sans-serif;
+$font-family: 'Sacramento', cursive;
+
+
+@mixin copy{
+    font-size: $copy-font-size;
+    font-family: $primary-font;
+    color: $font-color;   
+    letter-spacing: .0125em;
+}
+@mixin heading{
+    font-size: $header-font-size;
+    font-family: $secondary-font;
+    font-weight: 400;
+    letter-spacing: .025em;
+}
+ .brand{
+    width:40%;
+    height: 25vh;
+    background-size: contain;
+    background-image: url(../src/assets/images/brand/logo-yellow.png);
+    background-repeat: no-repeat;
+    @media screen and (max-width:768px)  {
+        height: 70px;
+        margin: 15px 0;
+    }
+    .header &{
+        height: 50px;
+        margin: 1em;
+
+    }
+}
+
+//carousel
+carousel{
+    background:$mustard; 
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 6000px;
+    }
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 500%;
+    height: 100vh;
+  }
+
+  .carousel-inner {
+    display: flex;
+  }
+  .carousel-item{
+      width:100%;
+      height: 100vh;
+  }
+  .controls {
+    position: absolute;
+    width: 100%;
+    padding: 0 2em;
+    z-index: 3;
+    }
+  .icon{
+    width: 48px;
+    height:48px;
+    display: flex;
+    background-color: transparent;
+    font-size: 0;
+    background-repeat: no-repeat;
+    border: none;
+    &.next{
+        background-image: url(../src/assets/images/icons/Angle-right.png);
+    }
+    &.prev{
+        background-image: url(../src/assets/images/icons/Angle-left.png);
+    }
+  }
+  .item{
+    width: 100%;
+    height: 100vh;
+    color: $offwhite;
+    text-shadow: 0 1px 2px $dark-blue;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: $dark-blue;
+        z-index: 2;
+        opacity: .1;
+    }
+    p{
+        z-index: 3;
+    }
+  }
+
+}
+
+//banners
+.supporting-children{
+    background-image: url(../src/assets/images/supporting-children.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+.nurse{
+    background-image: url(../src/assets/images/caring.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.recruitment{
+    background-image: url(../src/assets/images/interviewing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.elderly{
+    background-image: url(../src/assets/images/elderly.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.training{
+    background-image: url(../src/assets/images/training.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+//typography
+
+body{
+    @include copy();
+    margin: 0;
+    //background-image: url(../src/assets/images/consultant.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+ol, ul, dd, dt{
+    list-style: none;
+    margin: 0em 0 0 0;
+    padding: 0;
+    &:first-child{
+        margin-top:0;
+    }
+}
+h1,h2,h3, dt, th{
+    @include heading();
+}
+
+.hero + .display{
+    margin-top:0;
+}
+
+.coffee{background-color:$coffee;}
+.forest{background-color: $forest;}
+.mustard{background-color: $mustard;}
+.brown{background-color: $brown;}
+.jade{background-color: $jade;}
+.sacremento{background-color: $sacremento;}
+.seaweed{background-color: $seaweed;}
+.dark-blue{background-color: $dark-blue;}
+.navy-blue{background-color: $navy-blue;}
+.blue{background-color: $blue;}
+.grey{background-color: $grey;}
+.light-grey{background-color: $light-grey}
+.light-grey-bg{
+    background: url(../src/assets/images/grey-sliver.png) top left;
+}
+.highlight{
+    color:$jade;
+}
+.dark{
+    color:$offwhite;
+}
+.light{
+    color:$coffee;
+}
+
+
+
+
+
+.thin-rule {
+    position: relative;
+    &:after {
+        width: 100%;
+        height: 1px;
+        background:$coffee;
+        content: ' ';
+        position: absolute;
+        clear: left;
+        left: 0;
+        right: 0;
+        bottom: -16px;
+        max-width: 500px;
+        opacity: .6;
+        .dark &{
+            background:$offwhite;
+    
+        }
+    }
+        &.long:after{
+            max-width:2000px;
+        }
+}
+
+// dt{
+
+//     // &:before{
+//     //     content: '';
+//     //     background-image: url(../src/assets/images/icons/Angle-double-right.png);
+//     //     background-repeat: no-repeat;
+//     //     background-size: contain;
+//     //     width: 24px;
+//     //     height:24px;
+//     //     display: inline-block;
+//     //     transform: translateY(4px);
+//     //     margin-right: 10px;
+//     // }
+//     @media screen and (max-width:768px)  {
+//         padding: 8px;
+//         background: $mustard;
+//         margin-bottom: 1em;
+//         font-size: 16px;
+//         line-height: 2em;            
+//         + dd {
+//             padding: 1em;
+//         }
+//         &:before{
+//             width: 20px;
+//             height:20px;
+//         }
+//     }
+// }
+
+// blockquote{
+//     font-family: $font-family;
+//     font-size: 3em;
+//     margin: auto;
+// }
+// dl{
+//     margin-top: 0;
+// }
+
+// dd{
+//     font-size: 14px;
+//     padding: 1em 0;
+//     &:last-child{
+//         margin-bottom: 1em;
+//     }
+// }
+.display{
+    h1,h2{
+        font-size: 2em;
+    }
+    p{
+        font-size:1.5em;
+    }
+}
+//sections
+
+.employees{
+    position: relative;
+    &:before{
+        content:'';
+        background-image: url(../src/assets/images/happy-carer.png);
+        background-repeat: no-repeat;
+        //background-size: cover;
+        background-position: bottom left;
+        top:25vh;
+        bottom: 0;
+        left: 3em;
+        right: 0;
+        position: absolute;
+        background-size: contain;
+    } 
+    @media screen and (max-width:960px){
+        &:before{
+            top:60vh;
+            background-position: bottom right;
+
+        }
+    }
+}
+
+.about-us{
+    background: url(../src/assets/images/mustard-sleeve.jpg) repeat center;
+    position: relative;
+    background-size: contain;
+ 
+    div{
+        z-index: 1;
+    }
+    &:before{
+        content: '';
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+        background: url(../src/assets/images/happy-care.jpg) no-repeat right bottom;
+        background-size: contain;
+    }   
+    @media screen and (max-width:960px){
+        &:before{
+            background: url(../src/assets/images/happy-care.jpg) no-repeat left bottom;
+        }
+    }
+}
+
+.hero{
+    font-size: 3em;
+    margin-bottom: 16px;
+    @media screen and (max-width:960px){
+        font-size: 1.5em;
+    }
+}
+//layout
+.header{
+    background: $dark-blue;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.brand{
+    max-width: 150px;
+}
+img{
+    max-width: 100%;
+}
+nav{
+    padding: 1em;
+    a{
+        color:$mustard;
+        text-decoration: none;
+        opacity: 1;
+        transition: 300ms opacity ease-in-out;
+        text-transform: uppercase;
+        font-size: 13px;
+        &:hover{
+            opacity: .5;
+        }
+    }
+}
+@media screen and (max-width:768px)  {
+    .mob-padding-bottom{
+        padding-bottom:30px;
+    }
+    nav {
+        a{
+            font-size: 12px;
+        }
+
+    }
+}
+
+.full-page{
+    height:100vh;
+    position: relative;
+    @media screen and (max-width:768px)  {
+        min-height: 480px;
+        height: auto; 
+    }
+}
+.half-page{
+    height:50vh;
+}
+.padding{
+    &.sm{
+        padding: 0 30px;
+    }
+    &.md{
+        padding: 0 60px;
+    }
+    &.lg{
+        padding: 0 100px;
+    }
+
+}
+.top-padding{
+    padding-top:40px !important;
+}
+.bottom-padding{
+    padding-bottom:40px !important;
+}
+.remove-margin{
+    margin:0;
+    *{
+        margin: 0;
+    }
+}
+.mob-translate{
+    @media screen and (max-width:768px)  {
+        transform: translateY(60px); 
+    }
+}
+
+.mob-margin-bottom{
+    @media screen and (max-width:768px)  {
+        margin-bottom: 100px; 
+    }
+}
+
+.mob-overwrite-row{
+    @media screen and (max-width:768px)  {
+        flex-direction:column !important;
+    }
+}
+.mob-overwrite-width{
+    @media screen and (max-width:768px)  {
+        max-width: 100% !important;
+    }
+}
+.mob-remove-gap{
+    @media screen and (max-width:768px)  {
+        margin-right: auto !important;
+        padding: 1em;
+    }
+}
+//helper classes
+
+.hidden{
+    display: none;
+}
+.invisible{
+    visibility: hidden;
+    @media screen and (max-width:768px)  {
+        display: none;
+    }
+}
+
+.show{
+    display: flex;
+}
+
+.center{
+    text-align: center;
+}
+
+
+.opa-4{
+    opacity: .4;
+}
+.opa-5{
+    opacity: .5;
+}
+.opa-6{
+    opacity: .6;
+}
+
+//icons
+.icon{
+    display: flex;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.med{
+    width:60px;
+    height:60px;
+
+}
+.small{
+    width: 60px;
+    height:36px;
+}
+// .double-check{
+//     background-image: url(../src/assets/images/icons/Double-check.png)
+// }
+// .no-stress{
+//     background-image: url(../src/assets/images/icons/Like.png)
+// }
+// .no-hassle{    background-image: url(../src/assets/images/icons/Smile.png)
+// }
+// .secure{    background-image: url(../src/assets/images/icons/Shield-check.png)
+// }
+// .transparent{    background-image: url(../src/assets/images/icons/Shield-disabled.png)
+// }
+// .maintenance{    background-image: url(../src/assets/images/icons/Scissors.png)
+// }
+
+//elements
+button.primary {
+    max-width: 150px;
+    padding: 8px 12px;
+    border: none;
+    font-size: $copy-font-size;
+    background: $dark-blue;
+    color: $offwhite;
+    font-family: $primary-font;
+    &:hover{
+        background: $mustard;
+    }
+}
+
+#about-us{
+    position: absolute;
+    top:0;
+}
+
+app-training{
+    .training{
+        &:after {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $dark-blue;
+            z-index: 0;
+            opacity: .3;
+        }
+
+        div {
+            z-index: 1;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px #06161F;
+        }
+    }
+}
+
+ app-terms-and-conditions{
+     .terms{
+        &:after {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            //background: $dark-blue;
+            z-index: 0;
+            opacity: .3;
+        }
+
+        div {
+            z-index: 1;
+            //color: #f0f0f0;
+            //text-shadow: 0 1px 2px #06161F;
+        }
+    }
+}
+
+app-employees{
+    .recruitment{
+        &:after {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $dark-blue;
+            z-index: 0;
+            opacity: .3;
+        }
+
+        div {
+            z-index: 1;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px #06161F;
+        }
+    }
+}
+
+app-home{
+    .home{
+        background: url(../src/assets/images/adult-nurse.jpg);
+        background-size: cover;
+        background-position: center;
+        &:after {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $dark-blue;
+            z-index: 0;
+            opacity: .3;
+        }
+        div {
+            z-index: 1;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px #06161F;
+        }
+    }
+}
+
+app-services{
+    .services{
+        background: url(../src/assets/images/downs-syndrome.jpeg);
+        background-size: cover;
+        background-position: center;
+        &:after {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $dark-blue;
+            z-index: 0;
+            opacity: .3;
+        }
+
+        div {
+            z-index: 1;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px #06161F;
+        }
+    }
+    .service{
+        height:40vh;
+        position: relative;
+        .icon{
+            display: none;
+        }
+        img{
+            display:none;
+        }
+        h3{
+            font-family: $primary-font; 
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            right: 0;
+            background: $dark-blue;
+            color: $offwhite;
+            padding: 12px;
+            margin: 0;
+        }
+        &.nursing{
+            background: url(../src/assets/images/nurse.jpeg);
+            background-size: cover;
+            background-position: center;
+        }
+        &.carers{
+            background: url(../src/assets/images/adult-nurse.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        &.support-workers{
+            background: url(../src/assets/images/supporting-children.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.team{
+            background: url(../src/assets/images/team.jpeg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &.hiring{
+            background: url(../src/assets/images/hiring.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+    } 
+}
+app-footer, app-header{
+    @media screen and (max-width:768px)  {  
+        h3{
+            font-size:0;
+        }
+        .icon{
+            min-width:36px;
+            height:36px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            &.email{
+                background-image: url(../src/assets/images/icons/Mail.png);
+            }
+            &.office-hrs{
+                background-image: url(../src/assets/images/icons/Clock.png);
+            }
+                &.social{
+                    background-image: url(../src/assets/images/icons/Chat.png);
+            }
+                &.address{
+                    background-image: url(../src/assets/images/icons/Address-card.png);
+            }
+                &.telephone{
+                    background-image: url(../src/assets/images/icons/Call.png);
+            }
+                &.menu{
+                    background-image: url(../src/assets/images/menu-thin-yellow.png);
+            }  
+            &.close{
+                background-image: url(../src/assets/images/submenu-yellow.png);
+        }           
+        }
+    }
+}
+@media screen and (max-width:768px)  {  
+    .nav-icon {
+        position: absolute;
+        left: auto;
+        right: 24px;
+        top: 24px;
+    }
+    .mobile-nav-wrapper.active:before {
+        background: black;
+        content: ' ';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        position: absolute;
+        height: 100vh;
+        opacity: .7;
+    }
+
+    nav {
+        position: absolute;
+        left: auto;
+        right: 0px;
+        top: 0;
+        margin-top: 80px;
+        height: 100vh;
+        padding-right: 0;
+        background: #06161e;
+        a {
+            padding: 12px 30px 12px 0 ;
+            font-size: 16px;
+            border-bottom: 1px dotted;
+        }
+    }
+}
+
+a.download.link {
+    background: $jade;
+    padding: 12px 30px 12px 8px;
+    color: $offwhite;
+}
+
+.ltr{
+    direction: ltr;
+}
+.rtl{
+    direction: rtl;
+}
+
+.banner{
+    color: #f0f0f0;
+    text-shadow: 0 1px 2px #06161F;
+    font-family: $primary-font;
+    *{
+        font-family: inherit;
+    }
+}
+
+.btn{
+    padding: 12px 30px;
+    text-decoration: none;
+    &.primary {
+        background: $dark-blue;
+        color: $white;
+        &:hover{
+            background: $mustard;
+            color: $coffee;
+        }
+    }
+
+    &.secondary {
+        background: $sacremento;
+        color: $white;
+        &:hover{
+            background: $jade;
+            color: $coffee;
+        }
+    }
+}
