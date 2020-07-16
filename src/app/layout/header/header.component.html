@@ -1,55 +1,96 @@
-
-<header *ngIf="!mobileView" [class.fixed]="navFixed">
-    <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="brand"></div>
-        <div></div>
-       <nav *ngIf="isHomepage" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
+<header *ngIf="!mobileView" [class.fixed]="navFixed" fxLayout="column">
+  <div class="contact-info" fxLayout="row" fxLayoutAlign="center center">
+    <div
+      class="address"
+      fxLayout="row"
+      fxLayoutGap="10px"
+      fxLayoutAlign="start center"
+    >
+      <p><strong>Superior Healthcare Ltd,</strong></p>
+      <p>Bedford Heights,</p>
+      <p>Brickhill Drive,</p>
+      <p>Bedford,</p>
+      <p>Bedfordshire,</p>
+      <p>MK41 7PH</p>
+    </div>
+    <div
+      class="social hidden"
+      fxLayout="row"
+      fxLayoutGap="10px"
+      fxLayoutAlign="start center"
+    >
+      <p class="channel">
+        <a href="">Like us on Facebook</a><i class="ion logo-facebook"></i>
+      </p>
+      <p class="channel">
+        <span>Follow us on Instagram</span><i class="ion logo-instagram"></i>
+      </p>
+    </div>
+    <div class="phone"></div>
+  </div>
+  <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+    <a routerLink="/" class="brand"></a>
+    <div></div>
+    <!-- <nav *ngIf="isHomepage" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
          <a href="#about-us">About us</a>
          <a href="#employees">Our Employees</a>
          <a href="#training">Training and Development</a>
          <a href="#contact-us">Contact us</a>
      
-       </nav>
-       <nav *ngIf="!isHomepage" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
-          <a routerLink="/home">Home</a>
-          <a routerLink="/our-services">Our Services</a>
-          <a routerLink="/employees">Our Employees</a>
-          <a routerLink="/training">Training and Development</a>
-          <a routerLink="/terms-and-conditions">Terms and conditions</a>
-      
-        </nav>
-     </div>
-  </header>
+       </nav> -->
+    <nav
+      *ngIf="!isHomepage"
+      fxLayout="row"
+      fxLayoutGap="20px"
+      fxLayoutAlign="end center"
+    >
+      <a routerLink="/">Home</a>
+      <a routerLink="/our-services">Our Services</a>
+      <a routerLink="/employees">Our Employees</a>
+      <a routerLink="/training">Training and Development</a>
+      <a routerLink="/terms-and-conditions">Terms and conditions</a>
+    </nav>
+  </div>
+</header>
 
-  <header *ngIf="mobileView" [class.fixed]="navFixed">
-      <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="brand"></div>
-        <div class="mobile-nav-wrapper" [ngClass]="{'active': isActive}">
-          <div class="nav-icon" (click)="toggleNav()">
-            <i *ngIf="!isActive" class="icon menu"></i>
-            <i *ngIf="isActive" class="icon close"></i>
-          </div> 
-          <nav *ngIf="isActive && isHomepage" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start stretch">
-           <a href="#about-us">About us</a>
-           <a href="#employees">Our Employees</a>
-           <a href="#training">Training and Development</a>
-           <a href="#contact-us">Contact us</a>
-       
-         </nav>
-         <nav *ngIf="isActive && !isHomepage" fxLayout="column" fxLayoutAlign="start stretch">
-            <a routerLink="/home">Home</a>
-            <a routerLink="/our-services">Our Services</a>
-            <a routerLink="/employees">Our Employees</a>
-            <a routerLink="/training">Training and Development</a>
-            <a routerLink="/terms-and-conditions">Terms and conditions</a>
-            <div fxLayout="column" fxLayoutAlign="start stretch">
-                <h4 class="thin-rule dark">Follow us on</h4>
-                <a href="https://www.facebook.com/superiorhealthcareuk/">Facebook</a>
-                <a href="https://www.instagram.com/superiorhealthcareuk/">Instagram</a>
-            </div>
-          </nav>
-         
+<header *ngIf="mobileView" [class.fixed]="navFixed">
+  <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+    <a routerLink="/" class="brand"></a>
+    <div class="mobile-nav-wrapper" [ngClass]="{ active: isActive }">
+      <div class="nav-icon" (click)="toggleNav()">
+        <i *ngIf="!isActive" class="icon menu"></i>
+        <i *ngIf="isActive" class="icon close"></i>
+      </div>
+      <nav
+        *ngIf="isActive && isHomepage"
+        fxLayout="column"
+        fxLayoutGap="20px"
+        fxLayoutAlign="start stretch"
+      >
+        <a href="#about-us">About us</a>
+        <a href="#employees">Our Employees</a>
+        <a href="#training">Training and Development</a>
+        <a href="#contact-us">Contact us</a>
+      </nav>
+      <nav
+        *ngIf="isActive && !isHomepage"
+        fxLayout="column"
+        fxLayoutAlign="start stretch"
+      >
+        <a routerLink="/home">Home</a>
+        <a routerLink="/our-services">Our Services</a>
+        <a routerLink="/employees">Our Employees</a>
+        <a routerLink="/training">Training and Development</a>
+        <a routerLink="/terms-and-conditions">Terms and conditions</a>
+        <div fxLayout="column" fxLayoutAlign="start stretch">
+          <h4 class="thin-rule dark">Follow us on</h4>
+          <a href="https://www.facebook.com/superiorhealthcareuk/">Facebook</a>
+          <a href="https://www.instagram.com/superiorhealthcareuk/"
+            >Instagram</a
+          >
         </div>
-       </div>
-    </header>
-    <router-outlet></router-outlet>
+      </nav>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>

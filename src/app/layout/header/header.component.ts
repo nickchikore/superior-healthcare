@@ -3,50 +3,48 @@ import { Component, OnInit, HostListener } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  isActive: boolean = false;
+  isActive = false;
 
-  constructor() { }
-  isHomepage : boolean = false;
+  constructor() {}
+  isHomepage = false;
 
-  navFixed: boolean = false;
-  private scrollOffset: number = 70;
+  navFixed = false;
+  private scrollOffset = 70;
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    this.navFixed = (window.pageYOffset 
-      || document.documentElement.scrollTop 
-      || document.body.scrollTop || 0
-    ) > this.scrollOffset;
+    this.navFixed =
+      (window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0) > this.scrollOffset;
   }
 
-  toggleNav(){
-    this.isActive = !this.isActive
+  toggleNav() {
+    this.isActive = !this.isActive;
   }
 
-  mobileView:boolean;
-  innerWidth:number = window.innerWidth;
+  mobileView: boolean;
+  innerWidth: number = window.innerWidth;
 
   @HostListener('window:resize', ['$event'])
-
   onResize(event) {
-    if(window.innerWidth <= 960){
+    if (window.innerWidth <= 960) {
       this.mobileView = true;
-    }
-    else{
+    } else {
       this.mobileView = false;
     }
   }
   ngOnInit() {
-    if(window.innerWidth <= 960){
+    if (window.innerWidth <= 960) {
       this.mobileView = true;
       console.log('mobile');
-    }
-    else{
+    } else {
       this.mobileView = false;
-      console.log('desktop');      
+      console.log('desktop');
     }
   }
 }

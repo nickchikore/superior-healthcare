@@ -1,49 +1,126 @@
-<div *ngIf="mobileView; then mobile else desktop"></div>
-
+<div *ngIf="mobileView; then mobile; else desktop"></div>
 
 <ng-template #mobile>
+  <div
+    class="mustard mob-padding-bottom"
+    fxLayout="column"
+    fxLayoutAlign="start stretch"
+  >
+    <span id="contact-us"></span>
+    <div class="" class="padding sm">
+      <h2 class="thin-rule long">Contact us!</h2>
+      <div fxLayout="column" fxLayoutGap="12px">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="16px"
+          class="remove-margin"
+        >
+          <h3 fxFlex="10%" fxLayout="row" fxLayoutAlign="end center">
+            <i class="icon email"></i>Email
+          </h3>
+          <p>info@superior-healthcare.co.uk</p>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="16px"
+          class="remove-margin"
+        >
+          <h3 fxFlex="10%" fxLayout="row" fxLayoutAlign="end center">
+            <i class="icon office-hrs"></i>Opening hours
+          </h3>
+          <p>9:00- 16:30hrs (Monday- Friday)</p>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start start"
+          fxLayoutGap="16px"
+          class="remove-margin"
+        >
+          <h3 fxFlex="10%" fxLayout="row" fxLayoutAlign="end center">
+            <i class="icon address"></i>Address
+          </h3>
 
-    <div class=" mustard mob-padding-bottom" fxLayout="column" fxLayoutAlign="start stretch">
-      <span id="contact-us"></span>
-      <div class="" class="padding sm">
-        <h2 class="thin-rule long">Contact us!</h2> 
-        <div fxLayout="column" fxLayoutGap="12px">
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" class="remove-margin"><h3 fxFlex="10%"  fxLayout="row" fxLayoutAlign="end center" ><i class="icon email"></i>Email</h3> <p>superior-healthcare@yahoo.co.uk</p></div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" class="remove-margin"><h3 fxFlex="10%"  fxLayout="row" fxLayoutAlign="end center" ><i class="icon office-hrs"></i>Opening hours</h3> <p>9:00- 16:30hrs (Monday- Friday)</p></div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" class="remove-margin">
-            <h3 fxFlex="10%"  fxLayout="row" fxLayoutAlign="end center" ><i class="icon address"></i>Address</h3> 
-            <p>5 Grove Place,<br/> Bedford,<br/> MK40 3JJ <br/>
-            <a href="" class="highlight">Get directions to our office</a></p>
+          <div fxLayout="column" fxLayoutAlign="start start">
+            <p><strong>Superior Healthcare Ltd,</strong></p>
+            <p>Bedford Heights,</p>
+            <p>Brickhill Drive,</p>
+            <p>Bedford,</p>
+            <p>Bedfordshire,</p>
+            <p>MK41 7PH</p>
+            <p><a href="" class="highlight">Get directions to our office</a></p>
           </div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" class="remove-margin">
-              <h3 fxFlex="10%"  fxLayout="row" fxLayoutAlign="end center" ><i class="icon telephone"></i>Telephone  </h3> 
-              <p><a href="" class="highlight">Give us a call!</a></p>
-            </div>
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" class="remove-margin"><h3 fxFlex="10%"  fxLayout="row" fxLayoutAlign="end center" ><i class="icon social"></i>Social Media</h3> <p>Search for and follow us on facebook and twitter on the handle <b class="highlight"><i>@superiorhealthcareuk</i></b></p></div>
-    
-        </div> 
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="16px"
+          class="remove-margin"
+        >
+          <h3 fxFlex="10%" fxLayout="row" fxLayoutAlign="end center">
+            <i class="icon telephone"></i>Telephone
+          </h3>
+          <p><a href="" class="highlight">Give us a call!</a></p>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="16px"
+          class="remove-margin"
+        >
+          <h3 fxFlex="10%" fxLayout="row" fxLayoutAlign="end center">
+            <i class="icon social"></i>Social Media
+          </h3>
+          <p>
+            Search for and follow us on facebook and twitter on the handle
+            <b class="highlight"><i>@superiorhealthcareuk</i></b>
+          </p>
+        </div>
       </div>
-      <div class="center copyright" fxLayoutAlign="center center"><p>&copy; Superior Healthcare Ltd 2019. All rights reserved</p></div>
-    </div> 
-    </ng-template>
-        
+    </div>
+    <div class="center copyright" fxLayoutAlign="center center">
+      <p>&copy; Superior Healthcare Ltd 2019. All rights reserved</p>
+    </div>
+  </div>
+</ng-template>
 
 <ng-template #desktop>
-<div class="half-page grey dark mob-padding-bottom" fxLayout="column" fxLayoutAlign="start stretch">
-  <span id="contact-us"></span>
-  <div class="" class="padding lg">
-    <h2 class="thin-rule long">Contact us</h2> 
-    <div fxLayout="row" class="padding sm" fxLayoutGap="20px">
-      <div fxFlex="25%"><h3 class="display thin-rule">Email</h3> <p>superior-healthcare@yahoo.co.uk</p></div>
-      <div fxFlex="25%"><h3 class="display thin-rule">Opening hours</h3> <p>9:00- 16:30hrs <br/>(Monday- Friday)</p></div>
-      <div fxFlex="25%">
-        <h3 class="display thin-rule">Address</h3> 
-        <p>5 Grove Place,<br/> Bedford,<br/> MK40 3JJ <br/>
-        <a href="" class="highlight">Get directions to our office</a></p>
+  <div
+    class="grey dark mob-padding-bottom"
+    fxLayout="column"
+    fxLayoutAlign="start stretch"
+  >
+    <span id="contact-us"></span>
+    <div class="" class="padding sm">
+      <div fxLayout="row" class="padding sm" fxLayoutGap="20px">
+        <div fxFlex="30%">
+          <h3 class="display thin-rule">Email</h3>
+          <p>info@superior-healthcare.co.uk</p>
+          <h3 class="display thin-rule">Opening hours</h3>
+          <p>9:00- 16:30hrs <br />(Monday- Friday)</p>
+          <h3 class="display thin-rule">Social Media</h3>
+          <p>
+            Search for and follow us on facebook and twitter on the handle
+            <b class="highlight"><i>@superiorhealthcareuk</i></b>
+          </p>
+        </div>
+        <div fxFlex="30%">
+          <h3 class="display thin-rule">Address</h3>
+          <p><strong>Superior Healthcare Ltd,</strong></p>
+          <p>Bedford Heights,</p>
+          <p>Brickhill Drive,</p>
+          <p>Bedford,</p>
+          <p>Bedfordshire,</p>
+          <p>MK41 7PH</p>
+          <!-- <p>
+            <a href="" class="highlight">Get directions to our office</a>
+          </p> -->
+        </div>
       </div>
-      <div fxFlex="25%"><h3 class="display thin-rule">Social Media</h3> <p>Search for and follow us on facebook and twitter on the handle <b class="highlight"><i>@superiorhealthcareuk</i></b></p></div>  
-    </div> 
+    </div>
+    <div fxFlex="20%" class="center copyright" fxLayoutAlign="center center">
+      <p>&copy; Superior Healthcare Ltd 2019. All rights reserved</p>
+    </div>
   </div>
-  <div fxFlex="20%" class="center copyright" fxLayoutAlign="center center"><p>&copy; Superior Healthcare Ltd 2019. All rights reserved</p></div>
-</div> 
 </ng-template>
